@@ -16,7 +16,7 @@
 
 **示例图片 **
 
-![example](https://github.com/hui-shao/regression-equation/blob/master/result.png "result")
+![example](https://github.com/hui-shao/python-toolkit/raw/linear-regression/result.png "result")
 
 
 ### ===End===
