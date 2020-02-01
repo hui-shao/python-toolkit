@@ -11,3 +11,8 @@
 每个分支都是不同的项目
 
 因此...详见[各个分支>>>](https://github.com/hui-shao/python-toolkit/branches/all)
+=======
+# get-t66y-url
+
+This is a python based script that can help you find the urls of "t66y.com" which can be visited in China under GFW.
+
