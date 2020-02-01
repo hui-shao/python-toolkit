@@ -19,5 +19,5 @@ Image:
 
 1. 下载并安装python解释器  [官方网站>>>](https://www.python.org/)
 2. 下载本项目 （特别是“LrcConverter.py”）
-3. 在脚步所在目录新建目录 “input”，放入lrc歌词文件
-4. 在脚步所在目录打开终端，执行 `python LrcConverter.py`
+3. 在脚本所在目录新建目录 “input”，放入lrc歌词文件
+4. 在脚本所在目录打开终端，执行 `python LrcConverter.py`
