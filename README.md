@@ -6,13 +6,29 @@
 <img src="https://img.shields.io/badge/Platform-Windows%20%20%7C%20Linux-blue.svg?longCache=true&style=flat-square">
 </p>
 
-### 使用方法：
-
-每个分支都是不同的项目
-
-因此...详见[各个分支>>>](https://github.com/hui-shao/python-toolkit/branches/all)
 =======
 # get-t66y-url
 
 This is a python based script that can help you find the urls of "t66y.com" which can be visited in China under GFW.
+
+=======
+# 盗号骗子轰炸机
+用于向盗号骗子的网站提交大量虚假数据，以达到混淆真实数据的目的
+
+### 主要特征
+
+- 支持多线程
+- 支持自定义 headers
+- 支持自动分析提交情况
+
+### 使用说明
+
+1. 在盗号网站提交一次请求，通过网络抓包分析通讯地址，方式，参数等
+2. 先修改 “check.py” 进行测试（因为这是单线程的）
+3. 测试通过后，再修改 “run.py” 开启多线程模式！
+
+### 有待完善……
+
+- IP 代理(防止IP限制)
+- 随机账户/密码算法(让数据看起来更真实)
 
