@@ -68,3 +68,17 @@ This is a python based script that can help you find the urls of "t66y.com" whic
 
 - IP 代理(防止IP限制)
 - 随机账户/密码算法(让数据看起来更真实)
+=======
+# Python 文本处理工具集
+用于文本操作
+
+### 主要特征
+
+- 支持文本批量处理
+- 支持逐个文件选择转换模式
+- 支持自动判断主流系统平台
+
+### 工具说明
+
+1. [文本 UTF-8 和 GBK 转换工具](https://github.com/hui-shao/python-toolkit/blob/text-tools/GBK_UTF-8-Converter/README.md)
+2. [网易云音乐歌词转换工具](https://github.com/hui-shao/python-toolkit/blob/text-tools/NetEaseCloudMusic-LyricConverter/README.md)
