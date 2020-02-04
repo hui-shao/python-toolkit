@@ -8,4 +8,6 @@
 
 ### 使用方法：
 
-详见各个分支
+每个分支都是不同的项目
+
+因此...详见[各个分支>>>](https://github.com/hui-shao/python-toolkit/branches/all)
