@@ -9,5 +9,5 @@
 
 ### 工具说明
 
-1. [文本 UTF-8 和 GBK 转换工具](https://github.com/hui-shao/python-toolkit/blob/master/text-tools/GBK_UTF-8-Converter/README.md)
-2. [网易云音乐歌词转换工具](https://github.com/hui-shao/python-toolkit/blob/master/text-tools/NetEaseCloudMusic-LyricConverter/README.md)
+1. [文本 UTF-8 和 GBK 转换工具](https://github.com/hui-shao/python-toolkit/blob/master/text-tools/GBK_UTF-8-Converter)
+2. [网易云音乐歌词转换工具](https://github.com/hui-shao/python-toolkit/blob/master/text-tools/NetEaseCloudMusic-LyricConverter)
