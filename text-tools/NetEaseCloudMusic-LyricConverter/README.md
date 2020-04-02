@@ -11,7 +11,7 @@
 
 Image:
 
-![](https://raw.githubusercontent.com/hui-shao/python-toolkit/text-tools/NetEaseCloudMusic-LyricConverter/README1.png)
+![](https://raw.githubusercontent.com/hui-shao/python-toolkit/master/text-tools/NetEaseCloudMusic-LyricConverter/README1.png)
 
 > 转换前 & 转换后
 
