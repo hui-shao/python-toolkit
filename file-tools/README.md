@@ -13,4 +13,6 @@
    1. [通过文件名分类](https://github.com/hui-shao/python-toolkit/tree/master/file-tools/move-by-name)
    2. [通过修改日期分类](https://github.com/hui-shao/python-toolkit/tree/master/file-tools/move-by-date)
 
-4. 各目录下 dist 文件夹内有使用 pyinstaller 打包的 exe 程序
+4. [文件夹批量创建工具](https://github.com/hui-shao/python-toolkit/tree/master/file-tools/dir)
+
+5. 各目录下 dist 文件夹内有使用 pyinstaller 打包的 exe 程序
