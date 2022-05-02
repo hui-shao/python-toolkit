@@ -1,21 +1,22 @@
 # -*- coding: UTF-8 -*-
-# @Time    : 2021/12/21 19:52
+# @Time    : 2022/05/02 19:17
 # @Author  : Hui-Shao
 
 
 import json
+import sys
 import traceback
 import time
 import logging
 from datetime import datetime
 import requests
 
-logging.basicConfig(level=logging.INFO)
-
 
 class WxPusherTool:
-    @staticmethod
-    def send_wxmsg(_app_token: str, _type: int, _content: str, _summary: str = "", _uids=None, _topic_ids=None,
+    def __init__(self):
+        self.logger = self._set_logger()
+
+    def send_wxmsg(self, _app_token: str, _type: int, _content: str, _summary: str = "", _uids=None, _topic_ids=None,
                    _origin_url: str = ""):
         """
         Args:
@@ -30,6 +31,7 @@ class WxPusherTool:
         if _uids is None:
             _uids = []
         if len(_app_token) <= 5:
+            self.logger.warning("appToken不正确 跳过推送")
             return 1
         url_postmsg = "https://wxpusher.zjiecode.com/api/send/message"
         hea = {
@@ -47,31 +49,31 @@ class WxPusherTool:
         retry_n = 1
         while 1:
             if retry_n > 5:
-                logging.error("\n达到最大重试次数, 退出")
+                self.logger.error("\n达到最大重试次数, 退出")
                 break
             try:
                 res = requests.post(url=url_postmsg, json=data, headers=hea)  # 注: 不可用 data=data
             except requests.exceptions.SSLError:
-                logging.error("SSL 错误, 2s后重试 -> SSLError: An SSL error occurred.")
+                self.logger.error("SSL 错误, 2s后重试 -> SSLError: An SSL error occurred.")
                 time.sleep(2)
             except requests.exceptions.ConnectTimeout:
-                logging.error(
+                self.logger.error(
                     "建立连接超时, 5s后重试 -> ConnectTimeout: The request timed out while trying to connect to the remote server.")
                 time.sleep(5)
             except requests.exceptions.ReadTimeout:
-                logging.error(
+                self.logger.error(
                     "读取数据超时, 3s后重试 -> ReadTimeout: The server did not send any data in the allotted amount of time.")
                 time.sleep(3)
             except requests.exceptions.ConnectionError:
-                logging.error(f"{traceback.format_exc(3)}")
-                logging.error("建立连接错误, 5s后重试")
+                self.logger.error(f"{traceback.format_exc(3)}")
+                self.logger.error("建立连接错误, 5s后重试")
                 time.sleep(5)
             except requests.exceptions.RequestException:
-                logging.error(f"{traceback.format_exc(3)}")
-                logging.error("其他网络连接错误, 5s后重试")
+                self.logger.error(f"{traceback.format_exc(3)}")
+                self.logger.error("其他网络连接错误, 5s后重试")
                 time.sleep(5)
             except KeyboardInterrupt:
-                logging.warning("捕获到 KeyboardInterrupt, 退出")
+                self.logger.warning("捕获到 KeyboardInterrupt, 退出")
                 return False
             except Exception as e:
                 sign = '=' * 60 + '\n'
@@ -91,3 +93,14 @@ class WxPusherTool:
                     return False
             finally:
                 retry_n += 1
+
+    @staticmethod
+    def _set_logger() -> logging.Logger:
+        _logger = logging.getLogger("WxPusher")
+        _logger.setLevel(logging.DEBUG)
+        sh = logging.StreamHandler(stream=sys.stdout)  # 设置输出流
+        sh.setLevel(logging.INFO)
+        _format = logging.Formatter('%(name)s:%(levelname)s -> %(message)s')  # output logger_format
+        sh.setFormatter(_format)
+        _logger.addHandler(sh)
+        return _logger
