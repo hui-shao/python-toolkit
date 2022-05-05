@@ -83,13 +83,13 @@ class WxPusherTool:
                 if res.text:
                     msg_back = json.loads(res.text)
                     if msg_back["success"]:
-                        print("[WxPusher] 消息推送成功！")
+                        self.logger.info("[WxPusher] 消息推送成功！")
                         return True
                     else:
-                        print("[WxPusher] 消息推送可能失败 返回值：%s" % (msg_back["msg"]))
+                        self.logger.warning("[WxPusher] 消息推送可能失败 返回值：%s" % (msg_back["msg"]))
                         return False
                 else:
-                    print("[WxPusher] 消息推送失败 res.text 为空!")
+                    self.logger.error("[WxPusher] 消息推送失败 res.text 为空!")
                     return False
             finally:
                 retry_n += 1
